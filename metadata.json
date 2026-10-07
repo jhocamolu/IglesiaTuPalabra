@@ -1,0 +1,8 @@
+{
+  "name": "Iglesia Tu Palabra - Ibagué y Medellín",
+  "description": "Página web oficial de la Iglesia Cristiana Tu Palabra en Ibagué y Medellín. Conoce nuestros servicios, ministerios, grupos de conexión y próximos eventos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
