@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import apiRouter from './server/routes/api.js';
 import { initDatabase } from './server/db/database.js';
@@ -13,8 +14,10 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+  const PORT = process.env.PORT || 3000;
   const isProd = process.env.NODE_ENV === 'production';
+  const distPath = path.resolve(__dirname, 'dist');
+  const hasDist = fs.existsSync(distPath);
 
   // Middlewares
   app.use(cors());
@@ -37,24 +40,24 @@ async function startServer() {
     });
   });
 
-  // Client integration: Vite middleware in dev, static files in prod
-  if (!isProd) {
+  // Client integration: If dist exists or in production, serve static SPA files
+  if (hasDist || isProd) {
+    app.use(express.static(distPath));
+    app.get('*', (_req, res) => {
+      res.sendFile(path.resolve(distPath, 'index.html'));
+    });
+  } else {
+    // Development mode with Vite middleware
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else {
-    const distPath = path.resolve(__dirname, 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (_req, res) => {
-      res.sendFile(path.resolve(distPath, 'index.html'));
-    });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Servidor] Iglesia Tu Palabra ejecutándose en http://localhost:${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`[Servidor] Iglesia Tu Palabra ejecutándose en el puerto ${PORT}`);
   });
 }
 

@@ -18,7 +18,7 @@ import {
   mockRedes
 } from './mockData.ts';
 
-const API_BASE = '/api';
+const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api';
 
 function getAuthHeader(): Record<string, string> {
   const token = localStorage.getItem('tp_token');
@@ -141,7 +141,8 @@ export const api = {
       if (params.incluir_pasados) query.set('incluir_pasados', 'true');
       if (params.estado) query.set('estado', params.estado);
 
-      const res = await fetch(`${API_BASE}/eventos?${query.toString()}`);
+      const qs = query.toString();
+      const res = await fetch(`${API_BASE}/eventos${qs ? `?${qs}` : ''}`);
       if (res.ok) {
         const data = await res.json();
         return data;
@@ -248,7 +249,8 @@ export const api = {
       if (params.q) query.set('q', params.q);
       if (params.estado) query.set('estado', params.estado);
 
-      const res = await fetch(`${API_BASE}/grupos?${query.toString()}`);
+      const qs = query.toString();
+      const res = await fetch(`${API_BASE}/grupos${qs ? `?${qs}` : ''}`);
       if (res.ok) return await res.json();
     } catch {
       // Fallback
@@ -391,7 +393,8 @@ export const api = {
       if (params.grupo_id) query.set('grupo_id', params.grupo_id);
       if (params.estado) query.set('estado', params.estado);
 
-      const res = await fetch(`${API_BASE}/solicitudes?${query.toString()}`, {
+      const qs = query.toString();
+      const res = await fetch(`${API_BASE}/solicitudes${qs ? `?${qs}` : ''}`, {
         headers: getAuthHeader()
       });
       if (res.ok) return await res.json();

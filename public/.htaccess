@@ -1,0 +1,41 @@
+# =====================================================================
+# CONFIGURACIÓN HTACCESS PARA CPANEL - IGLESIA TU PALABRA
+# =====================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Si tienes el backend Node.js corriendo en un puerto local (ej. 3000),
+  # puedes descomentar las siguientes 2 líneas para redirigir /api a Node.js:
+  # RewriteRule ^api/(.*)$ http://127.0.0.1:3000/api/$1 [P,L]
+  # ProxyPassReverse /api http://127.0.0.1:3000/api
+
+  # 2. Rutas del frontend (Single Page Application - React Router):
+  # Si el archivo o directorio existe físicamente, servirlo directamente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. Si no es un archivo ni directorio real, redirigir a index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Tipos MIME correctos para módulos JavaScript modernos
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+</IfModule>
+
+# Compresión GZIP para máxima velocidad
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Seguridad básica
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
