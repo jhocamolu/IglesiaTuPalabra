@@ -67,19 +67,19 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
             <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-200">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">
+            <h3 className="font-heading text-2xl font-bold text-[#08323B]">
               ¡Solicitud Recibida!
             </h3>
             <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
               {successMessage}
             </p>
-            <div className="p-4 bg-amber-50 rounded-2xl text-xs text-amber-900 border border-amber-200/60 text-left">
+            <div className="p-4 bg-[#E8F4F6] rounded-2xl text-xs text-[#08323B] border border-[#0E5A6A]/20 text-left">
               <span className="font-bold block mb-1">Grupo: {grupo.nombre}</span>
               <span>Líder asignado: {grupo.nombre_lider}</span>
             </div>
             <button
               onClick={onClose}
-              className="mt-4 px-6 py-2.5 bg-[#0B1B3D] text-[#F3E5AB] rounded-xl font-semibold text-sm hover:bg-[#152e64] transition-all"
+              className="mt-4 px-6 py-2.5 bg-[#0E5A6A] text-white rounded-xl font-semibold text-sm hover:bg-[#08323B] transition-all shadow-md shadow-[#0E5A6A]/20"
             >
               Cerrar ventana
             </button>
@@ -89,16 +89,16 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
             
             {/* Header info about the group */}
             <div className="mb-6">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#B38728]">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#0E5A6A]">
                 Quiero unirme a un grupo
               </span>
-              <h3 className="font-heading text-2xl font-bold text-[#0B1B3D] mt-1">
+              <h3 className="font-heading text-2xl font-bold text-[#08323B] mt-1">
                 {grupo.nombre}
               </h3>
 
               <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
-                <span className="inline-flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200/50">
-                  <Calendar className="w-3.5 h-3.5 text-[#B38728]" />
+                <span className="inline-flex items-center gap-1 bg-[#E8F4F6] px-2.5 py-1 rounded-lg border border-[#0E5A6A]/20 text-[#0E5A6A] font-medium">
+                  <Calendar className="w-3.5 h-3.5 text-[#0E5A6A]" />
                   <span>{grupo.dia_semana} {grupo.hora_formato}</span>
                 </span>
                 <span className="inline-flex items-center gap-1 bg-slate-100 px-2.5 py-1 rounded-lg text-slate-700">
@@ -131,7 +131,7 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                   placeholder="Ej. Andrés Ramírez"
-                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all bg-slate-50/50"
+                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all bg-slate-50/50"
                 />
               </div>
 
@@ -146,7 +146,7 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
                     placeholder="Ej. +57 310 123 4567"
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all bg-slate-50/50"
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all bg-slate-50/50"
                   />
                 </div>
 
@@ -160,7 +160,7 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Ej. andres@ejemplo.com"
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all bg-slate-50/50"
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all bg-slate-50/50"
                   />
                 </div>
               </div>
@@ -174,7 +174,7 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
                   value={mensaje}
                   onChange={(e) => setMensaje(e.target.value)}
                   placeholder="Cuéntanos un poco sobre ti o si tienes alguna pregunta para el líder..."
-                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all bg-slate-50/50 resize-none"
+                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all bg-slate-50/50 resize-none"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export const JoinGroupModal: React.FC<JoinGroupModalProps> = ({ grupo, onClose, 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] text-xs font-semibold shadow-md shadow-navy-950/20 transition-all disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white text-xs font-semibold shadow-md shadow-[#0E5A6A]/20 transition-all disabled:opacity-50"
                 >
                   {loading ? (
                     <span>Enviando...</span>

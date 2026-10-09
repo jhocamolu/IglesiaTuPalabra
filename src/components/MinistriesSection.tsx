@@ -102,13 +102,13 @@ export const MinistriesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-[#B38728] font-bold">
+          <span className="text-xs uppercase tracking-widest text-[#0E5A6A] font-bold">
             Espacios para Cada Etapa de la Vida
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B1B3D] mt-2 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#08323B] mt-2 tracking-tight">
             Nuestros Ministerios
           </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-[#0E5A6A] mx-auto mt-4 rounded-full" />
           <p className="text-slate-700 mt-4 text-base sm:text-lg font-light leading-relaxed">
             Cada ministerio sigue una misma convicción: la Palabra de Dios enseña, restaura y edifica a cada persona en su temporada de vida.
           </p>
@@ -122,7 +122,7 @@ export const MinistriesSection: React.FC = () => {
             return (
               <div
                 key={min.id}
-                className="group flex flex-col justify-between bg-[#FAF8F5] rounded-3xl p-7 sm:p-8 border border-amber-900/10 shadow-xs hover:shadow-xl hover:shadow-amber-950/5 transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col justify-between bg-[#F8FAFA] rounded-3xl p-7 sm:p-8 border border-[#0E5A6A]/15 shadow-xs hover:shadow-xl hover:shadow-[#0E5A6A]/10 transition-all duration-300 hover:-translate-y-1"
               >
                 <div>
                   
@@ -136,10 +136,10 @@ export const MinistriesSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-heading text-xl font-bold text-[#0B1B3D]">
+                      <h3 className="font-heading text-xl font-bold text-[#08323B]">
                         {min.name}
                       </h3>
-                      <span className="text-[11px] font-semibold text-[#B38728]">
+                      <span className="text-[11px] font-semibold text-[#0E5A6A]">
                         {min.edades}
                       </span>
                     </div>
@@ -147,7 +147,7 @@ export const MinistriesSection: React.FC = () => {
 
                   {/* 1. Frase de Enganche */}
                   <div className="mb-3">
-                    <p className="font-heading italic font-semibold text-sm sm:text-base text-[#0B1B3D]">
+                    <p className="font-heading italic font-semibold text-sm sm:text-base text-[#08323B]">
                       «{min.hook}»
                     </p>
                   </div>
@@ -160,11 +160,11 @@ export const MinistriesSection: React.FC = () => {
                 </div>
 
                 {/* 3. Versículo Bíblico Oficial + 4. Horario & Botón */}
-                <div className="mt-6 pt-5 border-t border-amber-900/10 space-y-4">
+                <div className="mt-6 pt-5 border-t border-slate-200/80 space-y-4">
                   
                   {/* Versículo NTV */}
-                  <div className="bg-white/90 rounded-2xl p-4 border border-amber-800/10 shadow-2xs">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#B38728] mb-1">
+                  <div className="bg-white rounded-2xl p-4 border border-[#0E5A6A]/15 shadow-2xs">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#0E5A6A] mb-1">
                       <BookOpen className="w-3.5 h-3.5" />
                       <span>{min.verseRef}</span>
                     </div>
@@ -174,10 +174,10 @@ export const MinistriesSection: React.FC = () => {
                   </div>
 
                   {/* Horario */}
-                  <div className="flex items-start gap-2 text-xs text-slate-600 bg-amber-50/60 p-3 rounded-xl border border-amber-200/50">
-                    <Clock className="w-3.5 h-3.5 text-[#B38728] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 text-xs text-slate-600 bg-[#E8F4F6] p-3 rounded-xl border border-[#0E5A6A]/20">
+                    <Clock className="w-3.5 h-3.5 text-[#0E5A6A] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-slate-700 block">Horario de reunión:</span>
+                      <span className="font-bold text-[#08323B] block">Horario de reunión:</span>
                       <span>{min.horario}</span>
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export const MinistriesSection: React.FC = () => {
                   {/* CTA de Sección */}
                   <a
                     href="#grupos"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1B3D] hover:text-[#B38728] transition-colors pt-1 group/link"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E5A6A] hover:text-[#08323B] transition-colors pt-1 group/link"
                   >
                     <span>Quiero conectarme con este ministerio</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

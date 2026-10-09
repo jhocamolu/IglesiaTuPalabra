@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --brand-petrol: #0E5A6A;
+    --brand-petrol-dark: #08323B;
+    --brand-petrol-deep: #0A3E49;
+    --brand-petrol-light: #147285;
+    --brand-petrol-subtle: #E8F4F6;
+    --brand-gold: #D4AF37;
+    --brand-gold-dark: #B8860B;
+    --brand-gold-light: #FBF4DC;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -18,4 +29,46 @@
 .font-sans {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
+
+/* Brand Utility Classes for Manual de Imagen */
+.bg-brand-petrol {
+  background-color: #0E5A6A;
+}
+
+.bg-brand-petrol-dark {
+  background-color: #08323B;
+}
+
+.bg-brand-petrol-deep {
+  background-color: #0A3E49;
+}
+
+.bg-brand-petrol-light {
+  background-color: #147285;
+}
+
+.bg-brand-petrol-subtle {
+  background-color: #E8F4F6;
+}
+
+.text-brand-petrol {
+  color: #0E5A6A;
+}
+
+.text-brand-petrol-dark {
+  color: #08323B;
+}
+
+.text-brand-gold {
+  color: #D4AF37;
+}
+
+.border-brand-petrol {
+  border-color: #0E5A6A;
+}
+
+.border-brand-petrol-subtle {
+  border-color: #E8F4F6;
+}
+
 

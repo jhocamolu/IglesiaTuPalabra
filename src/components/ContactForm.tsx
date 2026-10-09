@@ -52,13 +52,13 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-8 sm:p-10 border border-amber-900/10 shadow-lg shadow-amber-950/5">
+    <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#0E5A6A]/15 shadow-lg shadow-[#0E5A6A]/5">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#B38728] flex items-center justify-center border border-amber-200/60">
+        <div className="w-10 h-10 rounded-xl bg-[#E8F4F6] text-[#0E5A6A] flex items-center justify-center border border-[#0E5A6A]/20">
           <MessageSquare className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="font-heading text-xl font-bold text-[#0B1B3D]">
+          <h3 className="font-heading text-xl font-bold text-[#08323B]">
             Escríbenos un Mensaje
           </h3>
           <p className="text-slate-500 text-xs font-light">
@@ -95,7 +95,7 @@ export const ContactForm: React.FC = () => {
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
             placeholder="Ej. Sofía Martínez"
-            className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all"
+            className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all"
           />
         </div>
 
@@ -110,7 +110,7 @@ export const ContactForm: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="sofia@ejemplo.com"
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all"
             />
           </div>
 
@@ -123,7 +123,7 @@ export const ContactForm: React.FC = () => {
               value={telefono}
               onChange={(e) => setTelefono(e.target.value)}
               placeholder="+57 312 000 0000"
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all"
             />
           </div>
         </div>
@@ -136,7 +136,7 @@ export const ContactForm: React.FC = () => {
             <select
               value={sedeId}
               onChange={(e) => setSedeId(e.target.value)}
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all"
             >
               <option value="">Cualquiera / General</option>
               <option value="1">Sede Ibagué (Tolima)</option>
@@ -151,7 +151,7 @@ export const ContactForm: React.FC = () => {
             <select
               value={asunto}
               onChange={(e) => setAsunto(e.target.value)}
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all"
             >
               <option value="Información general">Información general</option>
               <option value="Petición de Oración">Petición de oración</option>
@@ -172,14 +172,14 @@ export const ContactForm: React.FC = () => {
             value={mensaje}
             onChange={(e) => setMensaje(e.target.value)}
             placeholder="¿En qué te podemos servir o cómo podemos orar por ti hoy?"
-            className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#B38728]/40 focus:border-[#B38728] transition-all resize-none"
+            className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0E5A6A]/30 focus:border-[#0E5A6A] transition-all resize-none"
           />
         </div>
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] font-semibold text-sm shadow-md transition-all disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white font-semibold text-sm shadow-md shadow-[#0E5A6A]/20 transition-all disabled:opacity-50 hover:shadow-lg"
         >
           {loading ? (
             <span>Enviando mensaje...</span>

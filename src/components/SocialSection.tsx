@@ -71,18 +71,18 @@ export const SocialSection: React.FC = () => {
   ];
 
   return (
-    <section id="redes" className="py-20 lg:py-28 bg-[#FAF8F5] relative">
+    <section id="redes" className="py-20 lg:py-28 bg-[#F8FAFA] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-[#B38728] font-bold">
+          <span className="text-xs uppercase tracking-widest text-[#0E5A6A] font-bold">
             Conéctate Donde Estés
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B1B3D] mt-2 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#08323B] mt-2 tracking-tight">
             Nuestra Iglesia en Redes Sociales
           </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-[#0E5A6A] mx-auto mt-4 rounded-full" />
           <p className="text-slate-600 mt-4 text-base sm:text-lg font-light leading-relaxed">
             Lleva la Palabra de Dios contigo durante la semana. Síguenos y comparte el mensaje de Jesús con tus amigos.
           </p>
@@ -98,14 +98,14 @@ export const SocialSection: React.FC = () => {
                 href={red.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white hover:bg-amber-50 text-slate-800 border border-slate-200 shadow-2xs hover:shadow-md transition-all font-semibold text-xs group"
+                className="flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white hover:bg-[#E8F4F6] text-slate-800 border border-[#0E5A6A]/15 shadow-2xs hover:shadow-md transition-all font-semibold text-xs group"
               >
-                <div className="w-6 h-6 rounded-lg bg-[#0B1B3D] text-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-6 h-6 rounded-lg bg-[#0E5A6A] text-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Icon className="w-3.5 h-3.5" />
                 </div>
                 <span>{red.nombre_mostrar}</span>
                 <span className="text-slate-400 font-normal">({red.usuario})</span>
-                <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#0B1B3D] ml-0.5" />
+                <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#0E5A6A] ml-0.5" />
               </a>
             );
           })}
@@ -118,11 +118,11 @@ export const SocialSection: React.FC = () => {
             return (
               <div
                 key={i}
-                className="bg-white rounded-3xl p-8 border border-amber-900/10 shadow-xs hover:shadow-xl hover:shadow-amber-950/5 transition-all flex flex-col justify-between"
+                className="bg-white rounded-3xl p-8 border border-[#0E5A6A]/15 shadow-xs hover:shadow-xl hover:shadow-[#0E5A6A]/10 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#0B1B3D] text-[#D4AF37] flex items-center justify-center shadow-md">
+                    <div className="w-12 h-12 rounded-2xl bg-[#0E5A6A] text-[#D4AF37] flex items-center justify-center shadow-md shadow-[#0E5A6A]/20">
                       <Icon className="w-6 h-6" />
                     </div>
                     <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${hl.color}`}>
@@ -130,11 +130,11 @@ export const SocialSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#B38728]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0E5A6A]">
                     {hl.subtitle}
                   </span>
                   
-                  <h3 className="font-heading text-xl font-bold text-[#0B1B3D] mt-1 mb-3">
+                  <h3 className="font-heading text-xl font-bold text-[#08323B] mt-1 mb-3">
                     {hl.title}
                   </h3>
 
@@ -148,7 +148,7 @@ export const SocialSection: React.FC = () => {
                     href={hl.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0B1B3D] hover:text-[#B38728] transition-colors group"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0E5A6A] hover:text-[#08323B] transition-colors group"
                   >
                     <span>{hl.cta}</span>
                     <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

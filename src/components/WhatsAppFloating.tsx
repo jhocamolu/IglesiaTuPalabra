@@ -23,7 +23,7 @@ export const WhatsAppFloating: React.FC = () => {
               <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center">
                 <MessageCircle className="w-4 h-4" />
               </div>
-              <span className="font-heading font-bold text-sm text-[#0B1B3D]">
+              <span className="font-heading font-bold text-sm text-[#08323B]">
                 Chatea con nosotros
               </span>
             </div>

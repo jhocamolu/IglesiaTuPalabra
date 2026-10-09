@@ -24,6 +24,7 @@ import {
   Clock
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.tsx';
+import { Logo } from '../components/Logo.tsx';
 import { api } from '../services/api.ts';
 import type {
   Evento,
@@ -272,7 +273,7 @@ export const AdminDashboard: React.FC = () => {
     <div className="min-h-screen bg-slate-100/70 text-slate-800 flex flex-col">
       
       {/* Top Navbar Header */}
-      <header className="bg-[#0B1B3D] text-white sticky top-0 z-40 border-b border-amber-950/20 shadow-md">
+      <header className="bg-[#08323B] text-white sticky top-0 z-40 border-b border-[#0E5A6A]/30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
           <div className="flex items-center gap-4">
@@ -281,9 +282,10 @@ export const AdminDashboard: React.FC = () => {
               <span className="hidden sm:inline">Ver sitio web</span>
             </Link>
             <div className="h-4 w-px bg-white/20" />
-            <div>
-              <span className="font-heading font-bold text-lg text-white">Tu Palabra</span>
-              <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] ml-2 font-semibold">
+            <div className="flex items-center gap-3">
+              <Logo variant="white" size="xs" withSlogan={false} />
+              <div className="hidden sm:block h-4 w-px bg-white/20" />
+              <span className="text-[11px] uppercase tracking-widest text-[#D4AF37] font-semibold hidden sm:inline">
                 Panel de Administración
               </span>
             </div>
@@ -331,7 +333,7 @@ export const AdminDashboard: React.FC = () => {
             onClick={() => setActiveTab('resumen')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === 'resumen'
-                ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                ? 'bg-[#0E5A6A] text-white shadow-md'
                 : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
             }`}
           >
@@ -344,7 +346,7 @@ export const AdminDashboard: React.FC = () => {
               onClick={() => setActiveTab('eventos')}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                 activeTab === 'eventos'
-                  ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                  ? 'bg-[#0E5A6A] text-white shadow-md'
                   : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
               }`}
             >
@@ -357,7 +359,7 @@ export const AdminDashboard: React.FC = () => {
             onClick={() => setActiveTab('grupos')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === 'grupos'
-                ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                ? 'bg-[#0E5A6A] text-white shadow-md'
                 : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
             }`}
           >
@@ -369,7 +371,7 @@ export const AdminDashboard: React.FC = () => {
             onClick={() => setActiveTab('solicitudes')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === 'solicitudes'
-                ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                ? 'bg-[#0E5A6A] text-white shadow-md'
                 : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
             }`}
           >
@@ -383,7 +385,7 @@ export const AdminDashboard: React.FC = () => {
                 onClick={() => setActiveTab('mensajes')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'mensajes'
-                    ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                    ? 'bg-[#0E5A6A] text-white shadow-md'
                     : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
@@ -395,7 +397,7 @@ export const AdminDashboard: React.FC = () => {
                 onClick={() => setActiveTab('sedes')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'sedes'
-                    ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                    ? 'bg-[#0E5A6A] text-white shadow-md'
                     : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
@@ -407,7 +409,7 @@ export const AdminDashboard: React.FC = () => {
                 onClick={() => setActiveTab('redes')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'redes'
-                    ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                    ? 'bg-[#0E5A6A] text-white shadow-md'
                     : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
@@ -419,7 +421,7 @@ export const AdminDashboard: React.FC = () => {
                 onClick={() => setActiveTab('textos')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'textos'
-                    ? 'bg-[#0B1B3D] text-[#F3E5AB] shadow-md'
+                    ? 'bg-[#0E5A6A] text-white shadow-md'
                     : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
@@ -440,7 +442,7 @@ export const AdminDashboard: React.FC = () => {
               <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs flex items-center justify-between">
                 <div>
                   <span className="text-xs uppercase font-bold text-slate-400">Grupos Activos</span>
-                  <div className="text-3xl font-bold font-heading text-[#0B1B3D] mt-1">{visibleGrupos.length}</div>
+                  <div className="text-3xl font-bold font-heading text-[#08323B] mt-1">{visibleGrupos.length}</div>
                   <span className="text-[11px] text-emerald-600 font-semibold">Ibagué & Medellín</span>
                 </div>
                 <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#B38728] flex items-center justify-center">
@@ -451,12 +453,12 @@ export const AdminDashboard: React.FC = () => {
               <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs flex items-center justify-between">
                 <div>
                   <span className="text-xs uppercase font-bold text-slate-400">Solicitudes Nuevas</span>
-                  <div className="text-3xl font-bold font-heading text-[#0B1B3D] mt-1">
+                  <div className="text-3xl font-bold font-heading text-[#08323B] mt-1">
                     {solicitudes.filter(s => s.estado === 'pendiente').length}
                   </div>
                   <span className="text-[11px] text-amber-600 font-semibold">Por contactar</span>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0B1B3D] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#08323B] flex items-center justify-center">
                   <UserCheck className="w-6 h-6" />
                 </div>
               </div>
@@ -466,7 +468,7 @@ export const AdminDashboard: React.FC = () => {
                   <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs flex items-center justify-between">
                     <div>
                       <span className="text-xs uppercase font-bold text-slate-400">Eventos Activos</span>
-                      <div className="text-3xl font-bold font-heading text-[#0B1B3D] mt-1">{eventos.length}</div>
+                      <div className="text-3xl font-bold font-heading text-[#08323B] mt-1">{eventos.length}</div>
                       <span className="text-[11px] text-slate-500 font-semibold">Programados</span>
                     </div>
                     <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center">
@@ -477,7 +479,7 @@ export const AdminDashboard: React.FC = () => {
                   <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs flex items-center justify-between">
                     <div>
                       <span className="text-xs uppercase font-bold text-slate-400">Mensajes de Contacto</span>
-                      <div className="text-3xl font-bold font-heading text-[#0B1B3D] mt-1">
+                      <div className="text-3xl font-bold font-heading text-[#08323B] mt-1">
                         {mensajes.filter(m => m.estado === 'pendiente').length}
                       </div>
                       <span className="text-[11px] text-rose-600 font-semibold">Pendientes de respuesta</span>
@@ -496,7 +498,7 @@ export const AdminDashboard: React.FC = () => {
               {/* Recent Requests */}
               <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-heading font-bold text-lg text-[#0B1B3D]">
+                  <h3 className="font-heading font-bold text-lg text-[#08323B]">
                     Últimas Solicitudes a Grupos
                   </h3>
                   <button
@@ -529,12 +531,12 @@ export const AdminDashboard: React.FC = () => {
 
               {/* Status information */}
               <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-4">
-                <h3 className="font-heading font-bold text-lg text-[#0B1B3D]">
+                <h3 className="font-heading font-bold text-lg text-[#08323B]">
                   Información del Sistema
                 </h3>
                 <div className="space-y-3 text-xs text-slate-600">
                   <div className="p-3 rounded-xl bg-amber-50/80 border border-amber-200/50">
-                    <span className="font-bold text-[#0B1B3D] block mb-1">Horarios Oficiales de Culto:</span>
+                    <span className="font-bold text-[#08323B] block mb-1">Horarios Oficiales de Culto:</span>
                     <p>Sábados 5:00 PM (Adoración) y Domingos 10:00 AM (General & Niños)</p>
                   </div>
 
@@ -562,7 +564,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="space-y-6 animate-in fade-in duration-200">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Gestión de Eventos</h3>
+                <h3 className="font-heading text-2xl font-bold text-[#08323B]">Gestión de Eventos</h3>
                 <p className="text-xs text-slate-500">Crea, edita y programa eventos para Ibagué y Medellín.</p>
               </div>
 
@@ -579,7 +581,7 @@ export const AdminDashboard: React.FC = () => {
                   estado: 'publicado',
                   destacado: 0
                 })}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] text-xs font-semibold shadow-md transition-all self-start sm:self-auto"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white text-xs font-semibold shadow-md transition-all self-start sm:self-auto"
               >
                 <Plus className="w-4 h-4 text-[#D4AF37]" />
                 <span>Crear Nuevo Evento</span>
@@ -626,7 +628,7 @@ export const AdminDashboard: React.FC = () => {
                         <td className="py-3.5 px-4 text-right space-x-2">
                           <button
                             onClick={() => setEditingEvento(ev)}
-                            className="p-1.5 rounded-lg text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100"
+                            className="p-1.5 rounded-lg text-slate-600 hover:text-[#0E5A6A] hover:bg-slate-100"
                             title="Editar"
                           >
                             <Edit2 className="w-3.5 h-3.5" />
@@ -653,7 +655,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <h3 className="font-heading font-bold text-xl text-[#0B1B3D]">
+                <h3 className="font-heading font-bold text-xl text-[#08323B]">
                   {editingEvento.id ? 'Editar Evento' : 'Crear Nuevo Evento'}
                 </h3>
                 <button onClick={() => setEditingEvento(null)} className="text-slate-400 hover:text-slate-600">
@@ -813,7 +815,7 @@ export const AdminDashboard: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 text-xs rounded-xl bg-[#0B1B3D] text-[#F3E5AB] font-semibold hover:bg-[#152e64]"
+                    className="px-5 py-2 text-xs rounded-xl bg-[#0E5A6A] text-white font-semibold hover:bg-[#152e64]"
                   >
                     Guardar Evento
                   </button>
@@ -830,7 +832,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="space-y-6 animate-in fade-in duration-200">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Grupos de Conexión</h3>
+                <h3 className="font-heading text-2xl font-bold text-[#08323B]">Grupos de Conexión</h3>
                 <p className="text-xs text-slate-500">
                   {isAdmin
                     ? 'Gestiona todos los grupos de Ibagué y Medellín.'
@@ -855,7 +857,7 @@ export const AdminDashboard: React.FC = () => {
                     cupo_maximo: 15,
                     estado: 'activo'
                   })}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] text-xs font-semibold shadow-md transition-all self-start sm:self-auto"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white text-xs font-semibold shadow-md transition-all self-start sm:self-auto"
                 >
                   <Plus className="w-4 h-4 text-[#D4AF37]" />
                   <span>Crear Nuevo Grupo</span>
@@ -879,7 +881,7 @@ export const AdminDashboard: React.FC = () => {
                       </span>
                     </div>
 
-                    <h4 className="font-heading font-bold text-lg text-[#0B1B3D]">{g.nombre}</h4>
+                    <h4 className="font-heading font-bold text-lg text-[#08323B]">{g.nombre}</h4>
                     <span className="text-xs font-medium text-slate-500">{g.categoria_nombre}</span>
 
                     <div className="mt-3 space-y-1 text-xs text-slate-600">
@@ -901,7 +903,7 @@ export const AdminDashboard: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => setEditingGrupo(g)}
-                        className="p-1.5 rounded-lg text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-100"
+                        className="p-1.5 rounded-lg text-slate-600 hover:text-[#0E5A6A] hover:bg-slate-100"
                         title="Editar grupo"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -928,7 +930,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <h3 className="font-heading font-bold text-xl text-[#0B1B3D]">
+                <h3 className="font-heading font-bold text-xl text-[#08323B]">
                   {editingGrupo.id ? 'Editar Grupo de Conexión' : 'Registrar Nuevo Grupo'}
                 </h3>
                 <button onClick={() => setEditingGrupo(null)} className="text-slate-400 hover:text-slate-600">
@@ -1090,7 +1092,7 @@ export const AdminDashboard: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 text-xs rounded-xl bg-[#0B1B3D] text-[#F3E5AB] font-semibold hover:bg-[#152e64]"
+                    className="px-5 py-2 text-xs rounded-xl bg-[#0E5A6A] text-white font-semibold hover:bg-[#152e64]"
                   >
                     Guardar Grupo
                   </button>
@@ -1107,7 +1109,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="space-y-6 animate-in fade-in duration-200">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Solicitudes de Integración</h3>
+                <h3 className="font-heading text-2xl font-bold text-[#08323B]">Solicitudes de Integración</h3>
                 <p className="text-xs text-slate-500">Personas que han solicitado unirse a un grupo de conexión.</p>
               </div>
 
@@ -1201,7 +1203,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="space-y-6 animate-in fade-in duration-200">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Bandeja de Contacto</h3>
+                <h3 className="font-heading text-2xl font-bold text-[#08323B]">Bandeja de Contacto</h3>
                 <p className="text-xs text-slate-500">Mensajes y peticiones de oración recibidos a través de la web.</p>
               </div>
 
@@ -1219,7 +1221,7 @@ export const AdminDashboard: React.FC = () => {
                 <div key={m.id} className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
-                      <h4 className="font-heading font-bold text-base text-[#0B1B3D]">{m.asunto}</h4>
+                      <h4 className="font-heading font-bold text-base text-[#08323B]">{m.asunto}</h4>
                       <div className="text-xs text-slate-500">
                         De: <strong className="text-slate-800">{m.nombre_completo}</strong> ({m.email} {m.telefono ? `• ${m.telefono}` : ''})
                       </div>
@@ -1263,7 +1265,7 @@ export const AdminDashboard: React.FC = () => {
         {activeTab === 'sedes' && isAdmin && (
           <div className="space-y-6 animate-in fade-in duration-200">
             <div>
-              <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Gestión de Sedes</h3>
+              <h3 className="font-heading text-2xl font-bold text-[#08323B]">Gestión de Sedes</h3>
               <p className="text-xs text-slate-500">Edita horarios, direcciones, teléfonos y enlaces de Google Maps.</p>
             </div>
 
@@ -1271,10 +1273,10 @@ export const AdminDashboard: React.FC = () => {
               {sedes.map((s) => (
                 <div key={s.id} className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <h4 className="font-heading font-bold text-xl text-[#0B1B3D]">{s.nombre}</h4>
+                    <h4 className="font-heading font-bold text-xl text-[#08323B]">{s.nombre}</h4>
                     <button
                       onClick={() => setEditingSede(s)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#0B1B3D] hover:text-[#F3E5AB] text-slate-700 text-xs font-semibold transition-all"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#0E5A6A] hover:text-white text-slate-700 text-xs font-semibold transition-all"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                       <span>Editar</span>
@@ -1301,7 +1303,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <h3 className="font-heading font-bold text-xl text-[#0B1B3D]">Editar {editingSede.nombre}</h3>
+                <h3 className="font-heading font-bold text-xl text-[#08323B]">Editar {editingSede.nombre}</h3>
                 <button onClick={() => setEditingSede(null)} className="text-slate-400 hover:text-slate-600">
                   <XCircle className="w-5 h-5" />
                 </button>
@@ -1380,7 +1382,7 @@ export const AdminDashboard: React.FC = () => {
                   <button type="button" onClick={() => setEditingSede(null)} className="px-4 py-2 text-xs rounded-xl border">
                     Cancelar
                   </button>
-                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0B1B3D] text-[#F3E5AB] font-semibold">
+                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0E5A6A] text-white font-semibold">
                     Guardar Sede
                   </button>
                 </div>
@@ -1395,7 +1397,7 @@ export const AdminDashboard: React.FC = () => {
         {activeTab === 'redes' && isAdmin && (
           <div className="space-y-6 animate-in fade-in duration-200">
             <div>
-              <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Redes Sociales Oficiales</h3>
+              <h3 className="font-heading text-2xl font-bold text-[#08323B]">Redes Sociales Oficiales</h3>
               <p className="text-xs text-slate-500">Configura enlaces de Instagram, Facebook, YouTube, TikTok y WhatsApp.</p>
             </div>
 
@@ -1403,7 +1405,7 @@ export const AdminDashboard: React.FC = () => {
               {redes.map((r) => (
                 <div key={r.id} className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-heading font-bold text-base text-[#0B1B3D]">{r.nombre_mostrar}</span>
+                    <span className="font-heading font-bold text-base text-[#08323B]">{r.nombre_mostrar}</span>
                     <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
                       r.activa ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'
                     }`}>
@@ -1418,7 +1420,7 @@ export const AdminDashboard: React.FC = () => {
 
                   <button
                     onClick={() => setEditingRed(r)}
-                    className="w-full mt-2 py-2 text-xs rounded-xl bg-slate-50 hover:bg-[#0B1B3D] hover:text-[#F3E5AB] text-slate-700 font-semibold border border-slate-200 transition-colors"
+                    className="w-full mt-2 py-2 text-xs rounded-xl bg-slate-50 hover:bg-[#0E5A6A] hover:text-white text-slate-700 font-semibold border border-slate-200 transition-colors"
                   >
                     Editar Enlace
                   </button>
@@ -1433,7 +1435,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl border border-slate-100 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <h3 className="font-heading font-bold text-lg text-[#0B1B3D]">Editar {editingRed.nombre_mostrar}</h3>
+                <h3 className="font-heading font-bold text-lg text-[#08323B]">Editar {editingRed.nombre_mostrar}</h3>
                 <button onClick={() => setEditingRed(null)} className="text-slate-400 hover:text-slate-600">
                   <XCircle className="w-5 h-5" />
                 </button>
@@ -1483,7 +1485,7 @@ export const AdminDashboard: React.FC = () => {
                   <button type="button" onClick={() => setEditingRed(null)} className="px-4 py-2 text-xs rounded-xl border">
                     Cancelar
                   </button>
-                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0B1B3D] text-[#F3E5AB] font-semibold">
+                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0E5A6A] text-white font-semibold">
                     Guardar
                   </button>
                 </div>
@@ -1498,7 +1500,7 @@ export const AdminDashboard: React.FC = () => {
         {activeTab === 'textos' && isAdmin && (
           <div className="space-y-6 animate-in fade-in duration-200">
             <div>
-              <h3 className="font-heading text-2xl font-bold text-[#0B1B3D]">Textos Institucionales</h3>
+              <h3 className="font-heading text-2xl font-bold text-[#08323B]">Textos Institucionales</h3>
               <p className="text-xs text-slate-500">
                 Edita los textos de "¿Qué es?", "¿Qué hacemos?", Misión, Visión y Enfoque directamente sin tocar el código fuente.
               </p>
@@ -1510,11 +1512,11 @@ export const AdminDashboard: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-[10px] uppercase font-bold text-[#B38728]">{c.seccion} / {c.clave}</span>
-                      <h4 className="font-heading font-bold text-lg text-[#0B1B3D]">{c.titulo}</h4>
+                      <h4 className="font-heading font-bold text-lg text-[#08323B]">{c.titulo}</h4>
                     </div>
                     <button
                       onClick={() => setEditingContenido(c)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#0B1B3D] hover:text-[#F3E5AB] text-slate-700 text-xs font-semibold transition-all"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#0E5A6A] hover:text-white text-slate-700 text-xs font-semibold transition-all"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                       <span>Editar Texto</span>
@@ -1545,7 +1547,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <h3 className="font-heading font-bold text-xl text-[#0B1B3D]">Editar {editingContenido.titulo}</h3>
+                <h3 className="font-heading font-bold text-xl text-[#08323B]">Editar {editingContenido.titulo}</h3>
                 <button onClick={() => setEditingContenido(null)} className="text-slate-400 hover:text-slate-600">
                   <XCircle className="w-5 h-5" />
                 </button>
@@ -1606,7 +1608,7 @@ export const AdminDashboard: React.FC = () => {
                   <button type="button" onClick={() => setEditingContenido(null)} className="px-4 py-2 text-xs rounded-xl border">
                     Cancelar
                   </button>
-                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0B1B3D] text-[#F3E5AB] font-semibold">
+                  <button type="submit" className="px-5 py-2 text-xs rounded-xl bg-[#0E5A6A] text-white font-semibold">
                     Guardar Cambios
                   </button>
                 </div>

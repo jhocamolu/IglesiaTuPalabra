@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock, BookOpen, Heart, Sparkles, Car, Shirt, Baby, Shield, Users, ArrowRight } from 'lucide-react';
 import { useLocation } from '../context/LocationContext.tsx';
+import { Logo } from './Logo.tsx';
 
 export const ServicesSection: React.FC = () => {
   const { selectedSede } = useLocation();
@@ -33,62 +34,62 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="servicios" className="py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden">
+    <section id="servicios" className="py-20 lg:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-[#B38728] font-bold">
+          <span className="text-xs uppercase tracking-widest text-[#0E5A6A] font-bold">
             Adoración & Enseñanza Semanal
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B1B3D] mt-2 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#08323B] mt-2 tracking-tight">
             Nuestros Servicios
           </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-[#0E5A6A] mx-auto mt-4 rounded-full" />
           <p className="text-slate-700 mt-4 text-base sm:text-lg font-light leading-relaxed">
             Cada semana nos reunimos como familia para adorar a Dios, orar y escuchar su Palabra. Aprender lo que Dios quiere para nuestra vida es la razón de cada servicio.
           </p>
         </div>
 
         {/* Highlight Banner with Schedules and 2 Timoteo 3:16-17 */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-amber-900/10 shadow-xl shadow-amber-950/5 max-w-5xl mx-auto mb-16">
+        <div className="bg-[#F8FAFA] rounded-3xl p-8 sm:p-12 border border-[#0E5A6A]/15 shadow-xl shadow-[#0E5A6A]/5 max-w-5xl mx-auto mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             
             {/* Service times card */}
             <div className="space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B38728]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0E5A6A]">
                 Horarios Unificados en Ambas Sedes
               </span>
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#0B1B3D]">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#08323B]">
                 Te Esperamos Cada Fin de Semana
               </h3>
 
               <div className="space-y-3 pt-2">
-                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/60 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#0B1B3D] text-[#D4AF37] flex items-center justify-center shrink-0">
+                <div className="p-4 rounded-2xl bg-white border border-[#0E5A6A]/15 flex items-center gap-4 shadow-2xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#E8F4F6] text-[#0E5A6A] flex items-center justify-center shrink-0 border border-[#0E5A6A]/20">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="block text-xs uppercase font-bold text-slate-400">Servicio de Adoración</span>
-                    <span className="text-base font-bold text-[#0B1B3D]">Sábados 5:00 PM</span>
+                    <span className="text-base font-bold text-[#08323B]">Sábados 5:00 PM</span>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/60 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#0B1B3D] text-[#D4AF37] flex items-center justify-center shrink-0">
+                <div className="p-4 rounded-2xl bg-white border border-[#0E5A6A]/15 flex items-center gap-4 shadow-2xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#0E5A6A] text-[#D4AF37] flex items-center justify-center shrink-0 shadow-xs">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="block text-xs uppercase font-bold text-slate-400">Servicio General & BibliAventura</span>
-                    <span className="text-base font-bold text-[#0B1B3D]">Domingos 10:00 AM</span>
+                    <span className="text-base font-bold text-[#08323B]">Domingos 10:00 AM</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Scripture Box */}
-            <div className="bg-gradient-to-br from-[#0B1B3D] to-[#142852] text-white p-7 sm:p-8 rounded-3xl shadow-lg space-y-4">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#D4AF37]">
+            <div className="bg-gradient-to-br from-[#08323B] to-[#0E5A6A] text-white p-7 sm:p-8 rounded-3xl shadow-xl space-y-4 relative overflow-hidden">
+              <div className="flex items-center gap-2 text-xs font-bold text-amber-200">
                 <BookOpen className="w-4 h-4" />
                 <span>2 Timoteo 3:16-17 (NTV)</span>
               </div>
@@ -97,9 +98,12 @@ export const ServicesSection: React.FC = () => {
                 «Toda la Escritura es inspirada por Dios y es útil para enseñarnos lo que es verdad y para hacernos ver lo que está mal en nuestra vida. Nos corrige cuando estamos equivocados y nos enseña a hacer lo correcto. Dios la usa para preparar y capacitar a su pueblo para que haga toda buena obra.»
               </blockquote>
 
-              <span className="text-xs text-amber-200/80 block">
-                La Biblia viva y práctica en cada prédica dominical.
-              </span>
+              <div className="flex items-center justify-between pt-1 border-t border-white/10">
+                <span className="text-xs text-amber-200/80 block">
+                  La Biblia viva y práctica en cada prédica dominical.
+                </span>
+                <Logo variant="white" size="xs" symbolOnly={true} className="opacity-60" />
+              </div>
             </div>
 
           </div>
@@ -108,10 +112,10 @@ export const ServicesSection: React.FC = () => {
         {/* SECCIÓN: ¿Primera vez? */}
         <div className="max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase tracking-widest text-[#B38728] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#0E5A6A] font-bold">
               Bienvenida Cálida
             </span>
-            <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#0B1B3D] mt-1">
+            <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#08323B] mt-1">
               ¿Es Tu Primera Vez?
             </h3>
             <p className="text-sm text-slate-600 font-light mt-2 leading-relaxed">
@@ -126,19 +130,19 @@ export const ServicesSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-6 border border-amber-900/10 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+                  className="bg-[#F8FAFA] rounded-3xl p-6 border border-[#0E5A6A]/10 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#B38728] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-xl bg-[#E8F4F6] text-[#0E5A6A] flex items-center justify-center border border-[#0E5A6A]/20">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                      <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-white text-[#0E5A6A] border border-[#0E5A6A]/15">
                         {guide.tag}
                       </span>
                     </div>
 
-                    <h4 className="font-heading font-bold text-base text-[#0B1B3D] mb-1.5">
+                    <h4 className="font-heading font-bold text-base text-[#08323B] mb-1.5">
                       {guide.title}
                     </h4>
 
@@ -155,7 +159,7 @@ export const ServicesSection: React.FC = () => {
           <div className="mt-10 text-center">
             <a
               href="#visitanos"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] font-semibold text-xs shadow-md shadow-navy-950/15 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white font-semibold text-xs shadow-md shadow-[#0E5A6A]/20 transition-all hover:shadow-lg"
             >
               <span>Visítanos este fin de semana</span>
               <ArrowRight className="w-4 h-4 text-[#D4AF37]" />

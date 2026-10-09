@@ -66,7 +66,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
           
           <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-md bg-[#D4AF37] text-[#0B1B3D] text-[11px] font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-md bg-[#D4AF37] text-[#08323B] text-[11px] font-bold uppercase tracking-wider">
                 {evento.categoria_nombre || 'Evento'}
               </span>
               <span className="px-3 py-1 rounded-md bg-white/20 text-white text-[11px] font-semibold backdrop-blur-xs">
@@ -84,27 +84,27 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
         <div className="p-6 sm:p-8 space-y-6">
           
           {/* Key metadata grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-amber-50/70 border border-amber-900/10 text-xs text-slate-800">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-[#E8F4F6] border border-[#0E5A6A]/15 text-xs text-slate-800">
             <div className="flex items-start gap-3">
-              <Calendar className="w-4 h-4 text-[#B38728] shrink-0 mt-0.5" />
+              <Calendar className="w-4 h-4 text-[#0E5A6A] shrink-0 mt-0.5" />
               <div>
-                <span className="block font-bold text-slate-500 uppercase text-[10px]">Fecha</span>
+                <span className="block font-bold text-[#0E5A6A] uppercase text-[10px]">Fecha</span>
                 <span className="capitalize font-semibold">{formatDate(evento.fecha_inicio)}</span>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <Clock className="w-4 h-4 text-[#B38728] shrink-0 mt-0.5" />
+              <Clock className="w-4 h-4 text-[#0E5A6A] shrink-0 mt-0.5" />
               <div>
-                <span className="block font-bold text-slate-500 uppercase text-[10px]">Hora</span>
+                <span className="block font-bold text-[#0E5A6A] uppercase text-[10px]">Hora</span>
                 <span className="font-semibold">{formatTime(evento.fecha_inicio)}</span>
               </div>
             </div>
 
             <div className="flex items-start gap-3 sm:col-span-2">
-              <MapPin className="w-4 h-4 text-[#B38728] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#0E5A6A] shrink-0 mt-0.5" />
               <div>
-                <span className="block font-bold text-slate-500 uppercase text-[10px]">Lugar & Dirección</span>
+                <span className="block font-bold text-[#0E5A6A] uppercase text-[10px]">Lugar & Dirección</span>
                 <span className="font-semibold">{evento.lugar}</span>
                 {evento.direccion && <span className="block text-slate-600 font-normal">{evento.direccion}</span>}
               </div>
@@ -113,7 +113,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
 
           {/* Description */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-[#0B1B3D] mb-2">
+            <h4 className="font-heading text-lg font-bold text-[#08323B] mb-2">
               Detalles del evento
             </h4>
             <p className="text-slate-600 text-sm font-light leading-relaxed whitespace-pre-line">
@@ -122,8 +122,8 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
           </div>
 
           {evento.cupos_max && (
-            <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 p-3 rounded-xl">
-              <Users className="w-4 h-4 text-slate-500" />
+            <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-200">
+              <Users className="w-4 h-4 text-[#0E5A6A]" />
               <span>Cupos limitados: <strong>{evento.cupos_max} personas</strong></span>
             </div>
           )}
@@ -143,7 +143,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
                 href={evento.enlace_registro}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0B1B3D] hover:bg-[#152e64] text-[#F3E5AB] text-xs font-semibold shadow-md transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0E5A6A] hover:bg-[#08323B] text-white text-xs font-semibold shadow-md shadow-[#0E5A6A]/20 transition-all"
               >
                 <span>Inscribirme ahora</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -152,7 +152,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ evento, onCl
               <a
                 href="#contacto"
                 onClick={onClose}
-                className="w-full sm:w-auto text-center text-xs font-medium text-slate-500 hover:text-[#0B1B3D] underline"
+                className="w-full sm:w-auto text-center text-xs font-medium text-[#0E5A6A] hover:underline"
               >
                 ¿Preguntas sobre este evento? Contáctanos
               </a>

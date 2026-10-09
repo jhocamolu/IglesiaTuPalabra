@@ -1,10 +1,11 @@
 import React from 'react';
-import { BookOpen, MapPin, Phone, Mail, Instagram, Facebook, Youtube, Heart } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo.tsx';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0B1B3D] text-white pt-16 pb-12 border-t border-amber-900/30">
+    <footer className="bg-[#08323B] text-white pt-16 pb-12 border-t border-[#0E5A6A]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
@@ -12,25 +13,20 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Identity & Motto */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/10 text-[#D4AF37] flex items-center justify-center border border-white/10">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="font-heading text-xl font-bold tracking-tight text-white block">
-                  Tu Palabra
-                </span>
-                <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold block">
-                  Iglesia Cristiana
-                </span>
-              </div>
+            <div className="flex flex-col items-start">
+              <Logo
+                variant="white"
+                size="md"
+                withSlogan={true}
+                className="items-start origin-left mb-2 drop-shadow-xs"
+              />
             </div>
 
-            <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+            <p className="text-slate-200 text-xs sm:text-sm font-light leading-relaxed">
               Arraigados en las Sagradas Escrituras, viviendo el amor de Jesús en comunidad y transformando a Colombia generación tras generación.
             </p>
 
-            <div className="pt-2 text-xs text-amber-200/80 font-heading italic">
+            <div className="pt-2 text-xs text-amber-200 font-heading italic">
               «Lámpara es a mis pies tu palabra, y lumbrera a mi camino.» — Salmo 119:105
             </div>
           </div>
@@ -40,7 +36,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-4">
               Enlaces Rápidos
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs text-slate-200">
               <li><a href="#inicio" className="hover:text-white transition-colors">Inicio</a></li>
               <li><a href="#nosotros" className="hover:text-white transition-colors">¿Quiénes Somos? (Misión & Visión)</a></li>
               <li><a href="#ministerios" className="hover:text-white transition-colors">Ministerios por Edades</a></li>
@@ -49,7 +45,7 @@ export const Footer: React.FC = () => {
               <li><a href="#visitanos" className="hover:text-white transition-colors">Direcciones & Horarios</a></li>
               <li><a href="#contacto" className="hover:text-white transition-colors">Formulario de Contacto</a></li>
               <li>
-                <Link to="/admin/login" className="hover:text-amber-300 text-[#D4AF37] font-semibold transition-colors">
+                <Link to="/admin/login" className="hover:text-white text-[#D4AF37] font-semibold transition-colors">
                   Acceso a Líderes y Pastores
                 </Link>
               </li>
@@ -61,7 +57,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-4">
               Nuestras Sedes
             </h4>
-            <div className="space-y-4 text-xs text-slate-300">
+            <div className="space-y-4 text-xs text-slate-200">
               <div>
                 <strong className="text-white block text-sm">Sede Ibagué</strong>
                 <p>Carrera 5 # 38-42 (La Pola / Centro)</p>
@@ -83,7 +79,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-4">
               Comunidad Digital
             </h4>
-            <p className="text-xs text-slate-300 mb-4 leading-relaxed font-light">
+            <p className="text-xs text-slate-200 mb-4 leading-relaxed font-light">
               Síguenos en nuestras plataformas oficiales para transmisiones dominicales en vivo y devocionales diarios.
             </p>
 
@@ -92,7 +88,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com/tupalabraco"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#D4AF37] hover:text-[#0B1B3D] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#0E5A6A] hover:text-[#D4AF37] flex items-center justify-center transition-all"
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -101,7 +97,7 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com/tupalabraco"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#D4AF37] hover:text-[#0B1B3D] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#0E5A6A] hover:text-[#D4AF37] flex items-center justify-center transition-all"
                 title="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -110,7 +106,7 @@ export const Footer: React.FC = () => {
                 href="https://youtube.com/@tupalabraoficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#D4AF37] hover:text-[#0B1B3D] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#0E5A6A] hover:text-[#D4AF37] flex items-center justify-center transition-all"
                 title="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -126,7 +122,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4">
           <p>© {new Date().getFullYear()} Iglesia Cristiana Tu Palabra. Ibagué & Medellín, Colombia. Todos los derechos reservados.</p>
           <p className="flex items-center gap-1">
             <span>Para la gloria de Dios</span>
