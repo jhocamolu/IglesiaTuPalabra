@@ -663,30 +663,44 @@ export const api = {
       if (email.toLowerCase().includes('admin') && password === 'admin123') {
         const mockUser: Usuario = {
           id: 1,
-          nombre: 'Pastor Administrador General',
+          nombre: 'Pastor Robert Castillo',
           email: 'admin@tupalabra.co',
           rol: 'admin',
           sede_id: 1,
-          telefono: '+57 310 845-2911'
+          telefono: '+57 (310) 845-2911'
         };
         const token = 'mock_jwt_token_admin_' + Date.now();
         localStorage.setItem('tp_token', token);
         localStorage.setItem('tp_user', JSON.stringify(mockUser));
         return { token, user: mockUser };
       }
-      if (email.toLowerCase().includes('lider') && password === 'lider123') {
+      if (email.toLowerCase().includes('lider.jovenes') || (email.toLowerCase().includes('lider') && password === 'lider123')) {
         const mockLider: Usuario = {
           id: 2,
-          nombre: 'Líder Andrés Montoya',
+          nombre: 'Pastor Ricardo Castillo',
           email: 'lider.jovenes@tupalabra.co',
           rol: 'lider',
           sede_id: 1,
-          telefono: '+57 312 456-7890'
+          telefono: '+57 (312) 456-7890'
         };
         const token = 'mock_jwt_token_lider_' + Date.now();
         localStorage.setItem('tp_token', token);
         localStorage.setItem('tp_user', JSON.stringify(mockLider));
         return { token, user: mockLider };
+      }
+      if (email.toLowerCase().includes('medellin') && password === 'lider123') {
+        const mockLiderMedellin: Usuario = {
+          id: 3,
+          nombre: 'Pastor Luis Castillo',
+          email: 'lider.medellin@tupalabra.co',
+          rol: 'lider',
+          sede_id: 2,
+          telefono: '+57 (315) 889-1122'
+        };
+        const token = 'mock_jwt_token_lider_med_' + Date.now();
+        localStorage.setItem('tp_token', token);
+        localStorage.setItem('tp_user', JSON.stringify(mockLiderMedellin));
+        return { token, user: mockLiderMedellin };
       }
       throw new Error(e.message || 'Error al iniciar sesión');
     }

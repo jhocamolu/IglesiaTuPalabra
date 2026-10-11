@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /api/
+
+  # Si el archivo o directorio existe físicamente, servirlo
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Enviar todas las peticiones a index.php
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Seguridad: Denegar acceso a archivos sensibles
+<Files "config.php">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "store.json">
+  Order Allow,Deny
+  Deny from all
+</Files>

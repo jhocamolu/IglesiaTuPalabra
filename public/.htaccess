@@ -1,39 +1,40 @@
 # =====================================================================
 # CONFIGURACIÓN HTACCESS PARA CPANEL - IGLESIA TU PALABRA
+# Compatible con PHP 8.1 API y React SPA (Vite)
 # =====================================================================
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 1. Si tienes el backend Node.js corriendo en un puerto local (ej. 3000),
-  # puedes descomentar las siguientes 2 líneas para redirigir /api a Node.js:
-  # RewriteRule ^api/(.*)$ http://127.0.0.1:3000/api/$1 [P,L]
-  # ProxyPassReverse /api http://127.0.0.1:3000/api
+  # 1. Enrutar llamadas al Backend PHP 8.1 (/api/* -> /api/index.php)
+  RewriteCond %{REQUEST_URI} ^/api/(.*)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^api/(.*)$ api/index.php [QSA,L]
 
-  # 2. Rutas del frontend (Single Page Application - React Router):
-  # Si el archivo o directorio existe físicamente, servirlo directamente
+  # 2. Servir archivos físicos existentes (imágenes, CSS, JS, etc.)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # 3. Si no es un archivo ni directorio real, redirigir a index.html
+  # 3. Redirigir el resto al index.html para la navegación SPA de React
   RewriteRule ^ index.html [L]
 </IfModule>
 
-# Tipos MIME correctos para módulos JavaScript modernos
+# Tipos MIME para módulos JavaScript modernos
 <IfModule mod_mime.c>
   AddType application/javascript .js .mjs
   AddType text/css .css
   AddType image/svg+xml .svg
+  AddType application/json .json
 </IfModule>
 
-# Compresión GZIP para máxima velocidad
+# Compresión GZIP para máxima velocidad de carga
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
 </IfModule>
 
-# Seguridad básica
+# Cabeceras de seguridad
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-XSS-Protection "1; mode=block"

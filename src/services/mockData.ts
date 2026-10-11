@@ -16,15 +16,15 @@ export const mockSedes: Sede[] = [
     nombre: 'Sede Ibagué',
     ciudad: 'Ibagué',
     departamento: 'Tolima',
-    direccion: 'Carrera 5 # 38-42',
-    barrio: 'La Pola / Centro Empresarial',
+    direccion: 'Cra. 6 #17-71, Ibagué, Tolima',
+    barrio: 'Interlaken',
     telefono: '+57 (310) 845-2911',
     whatsapp: '+573108452911',
     email: 'ibague@tupalabra.co',
     horario_sabado: 'Sábados 5:00 PM',
     horario_domingo: 'Domingos 10:00 AM',
     mapa_embed_url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.854619375176!2d-75.2415174!3d4.4412351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c4fb25c3f91f%3A0x7d6b9d62d294827b!2zSWJhZ3XDqSwgVG9saW1h!5e0!3m2!1ses!2sco!4v1700000000000',
-    mapa_link_url: 'https://maps.google.com/?q=Ibague+Tolima',
+    mapa_link_url: 'https://maps.google.com/?q=Cra.+6+%2317-71,+Ibague,+Tolima',
     imagen_url: 'https://images.unsplash.com/photo-1548625361-192a54330e79?auto=format&fit=crop&w=1200&q=80',
     activa: 1
   },
@@ -72,8 +72,8 @@ export const mockCategorias: Categoria[] = [
   {
     id: 3,
     slug: 'jovenes-solteros',
-    nombre: 'Jóvenes Solteros (18-35)',
-    descripcion: 'Universitarios y profesionales creciendo en fe, vocación y comunión.',
+    nombre: 'Reset (18-35)',
+    descripcion: 'Universitarios y jóvenes profesionales creciendo en fe, vocación y comunión.',
     color_hex: '#0D9488',
     icono: 'Sparkles',
     activa: 1,
@@ -111,13 +111,23 @@ export const mockCategorias: Categoria[] = [
   },
   {
     id: 7,
+    slug: 'empresas',
+    nombre: 'Empresarial',
+    descripcion: 'Eventos y espacios abiertos para el sector productivo y laboral.',
+    color_hex: '#D97706',
+    icono: 'Calendar',
+    activa: 1,
+    orden: 7
+  },
+  {
+    id: 8,
     slug: 'general',
     nombre: 'General y Familias',
     descripcion: 'Eventos y espacios abiertos para toda la congregación.',
     color_hex: '#D97706',
     icono: 'Calendar',
     activa: 1,
-    orden: 7
+    orden: 8
   }
 ];
 
@@ -241,21 +251,21 @@ export const mockEventos: Evento[] = [
 export const mockGrupos: GrupoConexion[] = [
   {
     id: 1,
-    nombre: 'Conexión Jóvenes: Radicados en la Roca',
+    nombre: 'Conexión RESET',
     categoria_id: 3,
-    categoria_nombre: 'Jóvenes Solteros (18-35)',
+    categoria_nombre: 'Reset (18-35)',
     sede_id: 1,
     sede_nombre: 'Sede Ibagué',
     lider_id: 2,
-    nombre_lider: 'Andrés Montoya & Diana Torres',
+    nombre_lider: 'Pastor Ricardo Castillo & Equipo',
     contacto_lider: '+57 312 456-7890',
     dia_semana: 'Miércoles',
     hora: '19:00:00',
     hora_formato: '7:00 PM',
-    barrio_zona: 'La Pola (Zona Centro)',
-    ubicacion_aproximada: 'Cerca al Parque Centenario',
+    barrio_zona: 'Interlaken / Centro',
+    ubicacion_aproximada: 'Cerca a la Carrera 6ta con Calle 17',
     descripcion: 'Grupo de jóvenes universitarios y profesionales. Compartimos refrigerio, estudio bíblico aplicado a la vida diaria y tiempo de oración.',
-    cupo_maximo: 15,
+    cupo_maximo: 20,
     estado: 'activo',
     solicitudes_count: 1
   },
