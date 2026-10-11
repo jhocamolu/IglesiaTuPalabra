@@ -13,6 +13,18 @@ import { createRateLimiter } from '../middleware/rateLimit.js';
 
 const router = Router();
 
+// Middleware de compatibilidad con backend PHP 8.1
+router.use((req, _res, next) => {
+  if (req.query.route && typeof req.query.route === 'string') {
+    req.url = '/' + req.query.route.replace(/^\/+/, '');
+    return next();
+  }
+  if (req.url.includes('.php')) {
+    req.url = req.url.replace(/\.php(\?|$)/, '$1');
+  }
+  next();
+});
+
 // Rate limiters for public submissions
 const publicFormLimiter = createRateLimiter(60 * 1000, 10);
 

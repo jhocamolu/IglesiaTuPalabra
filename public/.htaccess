@@ -7,10 +7,9 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. Enrutar llamadas al Backend PHP 8.1 (/api/* -> /api/index.php)
-  RewriteCond %{REQUEST_URI} ^/api/(.*)$ [NC]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+  # 1. No interferir con la carpeta /api (dejar que /api/ ejecute sus scripts PHP directamente)
+  RewriteCond %{REQUEST_URI} ^/api(/|$) [NC]
+  RewriteRule ^ - [L]
 
   # 2. Servir archivos físicos existentes (imágenes, CSS, JS, etc.)
   RewriteCond %{REQUEST_FILENAME} -f [OR]

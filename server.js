@@ -1845,6 +1845,16 @@ function createRateLimiter(windowMs = 60 * 1e3, maxRequests = 10) {
 
 // server/routes/api.ts
 var router = Router();
+router.use((req, _res, next) => {
+  if (req.query.route && typeof req.query.route === "string") {
+    req.url = "/" + req.query.route.replace(/^\/+/, "");
+    return next();
+  }
+  if (req.url.includes(".php")) {
+    req.url = req.url.replace(/\.php(\?|$)/, "$1");
+  }
+  next();
+});
 var publicFormLimiter = createRateLimiter(60 * 1e3, 10);
 router.post("/auth/login", login);
 router.get("/sedes", getSedes);

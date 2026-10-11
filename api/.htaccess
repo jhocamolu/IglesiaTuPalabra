@@ -1,23 +1,22 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /api/
 
-  # Si el archivo o directorio existe físicamente, servirlo
+  # Si el archivo o directorio existe físicamente (ej. sedes.php, index.php), servirlo directo
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Enviar todas las peticiones a index.php
-  RewriteRule ^(.*)$ index.php [QSA,L]
+  # Enviar todas las peticiones REST a index.php pasando la ruta
+  RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
 </IfModule>
 
-# Seguridad: Denegar acceso a archivos sensibles
-<Files "config.php">
-  Order Allow,Deny
-  Deny from all
-</Files>
-
-<Files "store.json">
-  Order Allow,Deny
-  Deny from all
-</Files>
+# Seguridad: Proteger archivos sensibles compatible con Apache 2.4 y Apache 2.2
+<FilesMatch "(config\.php|store\.json|\.env)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

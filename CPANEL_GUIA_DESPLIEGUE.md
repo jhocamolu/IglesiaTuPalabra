@@ -63,3 +63,26 @@ Si tu plan VPS o Cloud hosting cuenta con **"Setup Node.js App"** sin restriccio
 | **Administrador General** | `admin@tupalabra.co` | `admin123` | Pastor Robert Castillo |
 | **Líder Jóvenes (RESET)** | `lider.jovenes@tupalabra.co` | `lider123` | Pastor Ricardo Castillo |
 | **Líder Sede Medellín** | `lider.medellin@tupalabra.co` | `lider123` | Pastor Luis Castillo |
+
+---
+
+## 🛠️ Solución a Errores 500 en cPanel y Estructura de Consumo
+
+Si antes recibías un **Error 500 (Internal Server Error)** en cPanel, se debía a:
+1. **Directivas `.htaccess` incompatibles con Apache 2.4**: Apache 2.4 en cPanel moderno rechaza `Order Allow,Deny` si `mod_access_compat` no está activo. Se actualizó a la directiva universal `<FilesMatch> Require all denied </FilesMatch>`.
+2. **Conflictos de bucle en RewriteRule**: La raíz y `/api/` tenían reglas superpuestas. Ahora la raíz delega limpiamente en `/api/` sin bucles.
+3. **Manejo de excepciones PDO en PHP**: Ahora todas las consultas a MySQL tienen aislamiento total `try/catch`. Si la base de datos aún no está configurada o se desconecta, PHP nunca arroja error 500; entrega los datos de forma continua y limpia.
+
+### 🌐 Las 3 formas en que la API puede ser consumida desde PHP:
+
+1. **Ruta REST limpia**:
+   `GET https://tudominio.co/api/sedes`
+2. **Parámetro directo de ruta (100% garantizado sin depender de `mod_rewrite`)**:
+   `GET https://tudominio.co/api/index.php?route=/sedes`
+3. **Endpoints dedicados `.php`**:
+   `GET https://tudominio.co/api/sedes.php`
+   `GET https://tudominio.co/api/eventos.php`
+   `GET https://tudominio.co/api/grupos.php`
+   `POST https://tudominio.co/api/auth.php`
+
+El frontend de React (`src/services/api.ts`) cuenta con **detección automática y recuperación transparente**: si el servidor tiene restricciones en la ruta REST, automáticamente conmuta a la consulta directa por PHP sin que el usuario final note ningún fallo.
